@@ -27,8 +27,9 @@
       if (toastPlacement) {
         toastDispose(toastPlacement);
       }
-      selectedType = document.querySelector('#selectTypeOpt').value;
-      selectedPlacement = document.querySelector('#selectPlacement').value.split(' ');
+      selectedType = "bg-success".value;
+      let area = "top-0 end-0";
+      selectedPlacement = area.split(' ');
 
       toastPlacementExample.classList.add(selectedType);
       DOMTokenList.prototype.add.apply(toastPlacementExample.classList, selectedPlacement);
