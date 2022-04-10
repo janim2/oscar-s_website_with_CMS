@@ -48,7 +48,8 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h5 class="card-title"><?= $results['title']; ?></h5>
-                    <!-- <span class="badge bg-label-primary">Health</span> <span class="badge bg-label-primary">Family</span>
+                      <span class="badge bg-label-primary">Inspiration</span>
+                    <!-- <span class="badge bg-label-primary">Family</span>
                     <span class="badge bg-label-primary">Fishes</span> -->
                     <!-- <h6 class="card-subtitle text-muted">Support card subtitle</h6> -->
                   </div>  
@@ -61,13 +62,14 @@
 
                     <p class="card-text"><?= strlen($results['content']) <= 210 ? $results['content']  : substr($results['content'] , 0, 210) . "...";?></p>
                     <div class="text-center">
-                      <button type="button" class="btn rounded-pill btn-primary">
-                        <span class="iconify" data-icon="akar-icons:eye-open"></span> </button>
-                      <button type="button" class="btn rounded-pill btn-secondary">
-                        <span class="tf-icons bx bx-edit" onclick="location.href='edit_blog.html'"></span>
+                      <!-- <button type="button" class="btn rounded-pill btn-primary" data-bs-toggle="offcanvas"
+                    data-bs-target="#description_modal" aria-controls="offcanvasScroll" onclick="display_in_slider('<?= $results['title']; ?>', '<?= $results['title']?>')">
+                        <span class="iconify" data-icon="akar-icons:eye-open"></span> </button> -->
+                      <button type="button" class="btn rounded-pill btn-secondary" onclick="location.href='edit_blog.php?ref=<?= $results['id']; ?>'">
+                        <span class="tf-icons bx bx-edit"></span>
                       </button>
                       <button type="button" class="btn rounded-pill btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#delete_modal" onclick="saveId(<?= $results['id']; ?>)">
+                    data-bs-target="#delete_modal" onclick="saveId('oscar_portfolio_blog_id', <?= $results['id']; ?>)">
                         <span class="tf-icons bx bx-trash"></span>
                       </button>
                     </div>
@@ -85,22 +87,27 @@
     <!--/ Card layout -->
   </div>
   <!-- / Content -->
+  
   <?php include_once 'includes/Blog/_add_blog.php'; ?>
   <?php include_once 'includes/_delete.php'; ?>
-  
+  <?php include_once 'includes/_slide_in_view.php'; ?>
+
+
 <?php
   require_once 'partials/footer.php'; 
 ?>
 
 <script>    
-    function saveId(item_id){
-      setCookie("oscar_portfolio_blog_id", item_id, 1)
-    }
-
     $(document).on('submit', '#add_blog_form', function (event) {
       event.preventDefault();
       submitFormQuery(this, "database/Blog/add_blog.php", ".loading", "Blog Post Added Successfully", false);
     });
+
+    function display_in_slider(title, content){
+      // console.log("checking");
+      $(".the_title").html(title);
+      $('.the_description').html(content);
+    }
 
     //delete
     function _delete(){

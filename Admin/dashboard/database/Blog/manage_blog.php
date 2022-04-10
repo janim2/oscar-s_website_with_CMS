@@ -18,7 +18,7 @@
         }
 
         function update_construct(){
-            $this->blog_id              = $_COOKIE['tek-devisal_project_id'];
+            $this->blog_id              = $_COOKIE['oscar_portfolio_blog_id'];
             $this->title                = $_POST['title'];
             // $this->image                = $_POST['name'];
             $this->content              = $_POST['content'];
@@ -77,20 +77,19 @@
         }
 
         function UpdateInfo($con){
-            $query = "UPDATE projects SET category_id = :c_id, name = :n, 
-                    client = :c, date = :d, url = :url,  description = :de 
+            $query = "UPDATE blogs SET title = :ti, content = :c, 
+                    tags = :t, show_comments = :sc 
                 WHERE id = :id";
             $statement = $con->prepare($query);
 
             $has_added = $statement->execute(
                 array(
-                    ":c_id" => $this->project_category,
-                    ":n"    => $this->name,
-                    ":c"    => $this->client, 
-                    ":d"    => $this->date, 
-                    ":url"  => $this->url, 
-                    ":de"   => $this->description,
-                    ":id"   => $this->project_id,
+                    ":ti"   => $this->title,
+                    ":c"    => $this->content, 
+                    ":t"    => $this->tags, 
+                    ":sc"   => $this->show_comments = "on" ? 1 : 0,
+                    ":id"   => $this->blog_id,
+
                 )
             );
 

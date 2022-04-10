@@ -33,17 +33,15 @@
                             <label for="exampleFormControlSelect2" class="form-label">Tags</label>
                             <select multiple class="form-select" id="tags" name="tags"
                                 aria-label="Multiple select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <!-- <option selected>Open this select menu</option> -->
+                                <option value="1" selected>Inspiration</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-check form-switch mb-2">
                         <input class="form-check-input" type="checkbox" id="areCommentsAllowed"
-                            name="areCommentsAllowed" required/>
+                            name="areCommentsAllowed"/>
                         <label class="form-check-label" for="flexSwitchCheckChecked">Check to allow comments</label>
                     </div>
 

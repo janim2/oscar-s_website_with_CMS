@@ -40,3 +40,8 @@ function eraseCookie(name) {
 function getAge(dob) { 
     return ~~((new Date()-new Date(dob))/(31556952000));
 }
+
+//save an item as a cookie
+function saveId(key, item_id){
+    setCookie(key, item_id, 1)
+  }
