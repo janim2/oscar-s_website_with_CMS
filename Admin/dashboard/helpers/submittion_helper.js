@@ -33,7 +33,7 @@ function submitFormQuery(context, url, loading_elem, success_message, isLogin = 
                         showConfirmButton: false,
                         timer: 1500,
                         }).then((result) => {
-                            location.href = 'dashboard.php';
+                            location.href = 'index.php';
                         });
                 }
                 else{
@@ -43,10 +43,9 @@ function submitFormQuery(context, url, loading_elem, success_message, isLogin = 
                         title: success_message,
                         showConfirmButton: false,
                         timer: 1500,
-                      })
-                    //   .then((result) => {
-                    //     location.reload();
-                    // });
+                      }).then((result) => {
+                        location.reload();
+                    });
                 }
                 // alert(data);
                 
