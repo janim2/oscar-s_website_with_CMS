@@ -9,7 +9,7 @@
              </div>
              <div class="modal-body">Are you sure you want to delete?</div>
              <div class="modal-footer">
-                 <button class="btn btn-danger">
+                 <button class="btn btn-danger loading" onclick="_delete()">
                      Delete
                  </button>
              </div>

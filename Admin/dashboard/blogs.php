@@ -67,7 +67,7 @@
                         <span class="tf-icons bx bx-edit" onclick="location.href='edit_blog.html'"></span>
                       </button>
                       <button type="button" class="btn rounded-pill btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#delete_modal">
+                    data-bs-target="#delete_modal" onclick="saveId(<?= $results['id']; ?>)">
                         <span class="tf-icons bx bx-trash"></span>
                       </button>
                     </div>
@@ -92,9 +92,18 @@
   require_once 'partials/footer.php'; 
 ?>
 
-<script>
+<script>    
+    function saveId(item_id){
+      setCookie("oscar_portfolio_blog_id", item_id, 1)
+    }
+
     $(document).on('submit', '#add_blog_form', function (event) {
       event.preventDefault();
       submitFormQuery(this, "database/Blog/add_blog.php", ".loading", "Blog Post Added Successfully", false);
     });
-  </script>
+
+    //delete
+    function _delete(){
+      deleteItemQuery("database/Blog/delete_blog.php", ".loading", "Post Deleted Successfully");
+    }
+</script>

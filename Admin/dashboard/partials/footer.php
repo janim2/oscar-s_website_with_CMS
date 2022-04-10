@@ -86,9 +86,6 @@
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-<!-- //script to help me with the ajax functions -->
-<script src="helpers/submittion_helper.js"></script>
-
 <!-- swall alert starts here -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -100,6 +97,12 @@
 
 <script src="sweetalert2.min.js"></script>
 <!-- swal ends here -->
+
+<!-- //script to help me with the ajax functions -->
+<script src="helpers/submittion_helper.js"></script>
+
+<!-- all my custom js helpers -->
+<script src="helpers/js_helpers.js"></script>
 
 <script>
     function Logout() {
