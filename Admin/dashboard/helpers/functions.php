@@ -88,3 +88,15 @@
     function moneyFormat($amount){
         return 'GHS ' . number_format($amount, 2);
     }
+
+    function verifyDate($date){        
+        //checking if the selected date has been back dated
+        $date_now = time();
+
+        if($date_now > strtotime($date)){
+            return 1; //this means that the date is past
+        }
+        else{
+            return 0;
+        }
+    }
