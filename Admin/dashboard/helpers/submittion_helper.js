@@ -156,3 +156,22 @@ function deleteItemQuery(url, loading_elem, success_message, should_move = false
             }
       });
 }
+
+function FetchItemQuery(url, item_id/*loading_elem,*/){
+    $.ajax({
+        url: url,
+        method: "POST",
+        dataType: "json",
+        data: {
+            'id' : item_id,
+        },
+        // beforeSend: function(){
+        //     BtnLoading(loading_elem);
+        // },
+        success: function (data) {
+            // BtnReset(loading_elem);
+            $('.the_title').html(data['title']);
+            $('.the_description').html(data['content']);
+        }
+      });
+}

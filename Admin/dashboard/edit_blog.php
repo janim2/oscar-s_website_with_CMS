@@ -27,10 +27,10 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Dashboard</a>
+          <a href="index.php">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="books.html">Blog</a>
+          <a href="books.php">Blog</a>
         </li>
 
         <li class="breadcrumb-item active">Edit Blog Post</li>

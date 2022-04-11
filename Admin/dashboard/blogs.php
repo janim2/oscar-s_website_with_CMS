@@ -62,9 +62,9 @@
 
                     <p class="card-text"><?= strlen($results['content']) <= 210 ? $results['content']  : substr($results['content'] , 0, 210) . "...";?></p>
                     <div class="text-center">
-                      <!-- <button type="button" class="btn rounded-pill btn-primary" data-bs-toggle="offcanvas"
-                    data-bs-target="#description_modal" aria-controls="offcanvasScroll" onclick="display_in_slider('<?= $results['title']; ?>', '<?= $results['title']?>')">
-                        <span class="iconify" data-icon="akar-icons:eye-open"></span> </button> -->
+                      <button type="button" class="btn rounded-pill btn-primary" data-bs-toggle="offcanvas"
+                    data-bs-target="#description_modal" aria-controls="offcanvasScroll" onclick="display_in_slider(<?= $results['id']; ?>)">
+                        <span class="iconify" data-icon="akar-icons:eye-open"></span> </button>
                       <button type="button" class="btn rounded-pill btn-secondary" onclick="location.href='edit_blog.php?ref=<?= $results['id']; ?>'">
                         <span class="tf-icons bx bx-edit"></span>
                       </button>
@@ -103,10 +103,9 @@
       submitFormQuery(this, "database/Blog/add_blog.php", ".loading", "Blog Post Added Successfully", false);
     });
 
-    function display_in_slider(title, content){
+    function display_in_slider(id){
       // console.log("checking");
-      $(".the_title").html(title);
-      $('.the_description').html(content);
+      FetchItemQuery("database/Blog/fetch_blog.php", id);
     }
 
     //delete

@@ -71,18 +71,18 @@
         return $result['id'];
     }
 
-    // function fetchProductIdUsingTempImgUploadID($con, $tmp_img_upload_id){
-    //     $query      = "SELECT id FROM shop WHERE tmp_image_upload_id = :temp_img_upload_id";
-    //     $statement  = $con->prepare($query);
+    function fetchBookPostIdUsingTempImgUploadID($con, $tmp_img_upload_id){
+        $query      = "SELECT id FROM books WHERE tmp_image_upload_id = :temp_img_upload_id";
+        $statement  = $con->prepare($query);
 
-    //     $statement->execute(
-    //         array(
-    //             ":temp_img_upload_id" => $tmp_img_upload_id,
-    //         )
-    //     );
-    //     $result = $statement->fetch();
-    //     return $result['id'];
-    // }
+        $statement->execute(
+            array(
+                ":temp_img_upload_id" => $tmp_img_upload_id,
+            )
+        );
+        $result = $statement->fetch();
+        return $result['id'];
+    }
 
     function moneyFormat($amount){
         return 'GHS ' . number_format($amount, 2);

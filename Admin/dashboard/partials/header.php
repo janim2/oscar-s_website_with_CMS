@@ -82,7 +82,7 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item active">
-                        <a href="index.html" class="menu-link">
+                        <a href="index.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
@@ -92,25 +92,25 @@
                         <span class="menu-header-text">Manage</span>
                     </li>
                     <li class="menu-item">
-                        <a href="appointments.html" class="menu-link">
+                        <a href="appointments.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div data-i18n="Basic">Appointments</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="blogs.html" class="menu-link">
+                        <a href="blogs.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div data-i18n="Basic">Blog</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="books.html" class="menu-link">
+                        <a href="books.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div data-i18n="Basic">Books</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="testimonials.html" class="menu-link">
+                        <a href="testimonials.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div data-i18n="Basic">Testimonials</div>
                         </a>
@@ -119,12 +119,12 @@
                     <!-- Components -->
                     <li class="menu-header small text-uppercase"><span class="menu-header-text">Others</span></li>
                     <!-- Cards -->
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                         <a href="profile.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div data-i18n="Basic">Profile</div>
                         </a>
-                    </li>
+                    </li> -->
                     <!-- <li class="menu-item">
             <a href="cards-basic.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-collection"></i>
