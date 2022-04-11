@@ -14,7 +14,7 @@
         }
 
         function update_construct(){
-            $this->book_id        = $_COOKIE['oscar_portfolio_testimony_id'];
+            $this->testimony_id   = $_COOKIE['oscar_portfolio_testimony_id'];
             $this->testimony      = $_POST['testimony'];
             $this->speaker        = $_POST['speaker'];
             $this->position       = $_POST['position'];
