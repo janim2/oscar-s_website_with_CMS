@@ -22,13 +22,13 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.html">Dashboard</a>
+              <a href="index.php">Dashboard</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="appointments.html">Appointments</a>
+              <a href="appointments.php">Appointments</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="blogs.html">Blogs</a>
+              <a href="blogs.php">Blogs</a>
             </li>
             <li class="breadcrumb-item active">Books</li>
           </ol>
@@ -61,11 +61,11 @@
                   <button type="button" class="btn rounded-pill btn-primary" data-bs-toggle="offcanvas"
                     data-bs-target="#description_modal" aria-controls="offcanvasScroll" onclick="display_in_slider(<?= $results['id']?>)">
                     <span class="iconify" data-icon="akar-icons:eye-open"></span> </button>
-                  <button type="button" class="btn rounded-pill btn-secondary">
-                    <span class="tf-icons bx bx-edit" onclick="location.href='edit_book.html?bb_ref=4'"></span>
+                  <button type="button" class="btn rounded-pill btn-secondary" onclick="location.href='edit_book.php?bb_ref=<?= $results['id']?>'">
+                    <span class="tf-icons bx bx-edit"></span>
                   </button>
                   <button type="button" class="btn rounded-pill btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#delete_modal">
+                    data-bs-target="#delete_modal" onclick="saveId('oscar_portfolio_book_id', <?= $results['id']; ?>)">
                     <span class="tf-icons bx bx-trash"></span>
                   </button>
                 </div>

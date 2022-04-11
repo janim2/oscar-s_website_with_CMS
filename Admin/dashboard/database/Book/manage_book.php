@@ -16,7 +16,7 @@
         }
 
         function update_construct(){
-            $this->blog_id              = $_COOKIE['oscar_portfolio_blog_id'];
+            $this->book_id              = $_COOKIE['oscar_portfolio_book_id'];
             $this->title                = $_POST['title'];
             // $this->image             = $_POST['name'];
             $this->description          = $_POST['description'];
@@ -72,19 +72,16 @@
         }
 
         function UpdateInfo($con){
-            $query = "UPDATE blogs SET title = :ti, content = :c, 
-                    tags = :t, show_comments = :sc 
-                WHERE id = :id";
+            $query = "UPDATE books SET title = :ti, description = :d, 
+                    date_published = :dp WHERE id = :id";
             $statement = $con->prepare($query);
 
             $has_added = $statement->execute(
                 array(
                     ":ti"   => $this->title,
-                    ":c"    => $this->content, 
-                    ":t"    => $this->tags, 
-                    ":sc"   => $this->show_comments = "on" ? 1 : 0,
-                    ":id"   => $this->blog_id,
-
+                    ":d"    => $this->description, 
+                    ":dp"   => $this->date_published, 
+                    ":id"   => $this->book_id,
                 )
             );
 

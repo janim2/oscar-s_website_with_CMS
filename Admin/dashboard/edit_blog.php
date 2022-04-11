@@ -27,10 +27,10 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.php">Dashboard</a>
+          <a href="index.html">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="books.php">Blog</a>
+          <a href="books.html">Blog</a>
         </li>
 
         <li class="breadcrumb-item active">Edit Blog Post</li>
@@ -122,6 +122,8 @@
 ?>
 
 <script>
+  saveId('oscar_portfolio_blog_id', '<?= $ref; ?>');
+
   $(document).on('submit', '#edit_blog_form', function (event) {
       event.preventDefault();
       submitFormQuery(this, "database/Blog/edit_blog.php", ".loading", "Blog Post Editted Successfully", false);

@@ -2,7 +2,7 @@
     require_once '../config.php';
 
     $del = new RemoveBook();
-    echo $del->DeleteBook($con, $_COOKIE['oscar_portfolio_blog_id']);
+    echo $del->DeleteBook($con, $_COOKIE['oscar_portfolio_book_id']);
 
     class RemoveBook {
         function DeleteBook($con, $id){
