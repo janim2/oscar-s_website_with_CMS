@@ -12,21 +12,22 @@
         return $result[$what_to_return];
     }
 
-    // function fetchFirstImage($con, $project_id){
-    //     $query = "SELECT image_url FROM images WHERE project_id = :id LIMIT 1";
-    //     $statement = $con->prepare($query);
-
-    //     $statement->execute(
-    //         array(
-    //             ":id" => $project_id,
-    //         )
-    //     );
-    //     $result = $statement->fetch();
-    //     return $result['image_url'];
-    // }
-
     function fetchFirstBlogImage($con, $project_id){
         $query = "SELECT image_url FROM blog_images WHERE blog_id = :id LIMIT 1";
+        $statement = $con->prepare($query);
+
+        $statement->execute(
+            array(
+                ":id" => $project_id,
+            )
+        );
+        $result = $statement->fetch();
+        return $result['image_url'];
+    }
+
+
+    function fetchFirstBookImage($con, $project_id){
+        $query = "SELECT image_url FROM book_images WHERE book_id = :id LIMIT 1";
         $statement = $con->prepare($query);
 
         $statement->execute(
