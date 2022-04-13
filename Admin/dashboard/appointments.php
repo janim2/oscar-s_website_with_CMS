@@ -51,7 +51,9 @@
                 foreach($result as $results){?>
                   <tr>
                     <td><?= $i; ?></td>
-                    <td><span class="badge <?= verifyDate($results['date']) == 0 ? 'bg-label-primary' : 'bg-label-danger' ?>"><?= verifyDate($results['date']) ? 'Past' : 'Upcoming' ?></span></td>
+                    <td>
+                      <span class="badge <?= verifyDate($results['date']) == 0 ? 'bg-label-primary' : 'bg-label-danger' ?>"><?= verifyDate($results['date']) ? 'Past' : 'Upcoming' ?></span>
+                    </td>
 
                     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $results['fullname']; ?></strong></td>
                     <td><?= $results['email']; ?></td>

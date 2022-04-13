@@ -96,6 +96,9 @@
         if($date_now > strtotime($date)){
             return 1; //this means that the date is past
         }
+        else if($date_now == strtotime($data)){
+            return 2; //this means the date is today
+        }
         else{
             return 0;
         }
