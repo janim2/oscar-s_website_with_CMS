@@ -78,6 +78,10 @@
                         <div class="form-text">Min 100 words</div>
                       </div>
                       <div class="mb-3">
+                        <label class="form-label" for="basic-icon-default-phone">Amazon link</label>
+                        <input class="form-control" type="text" value="<?= $result['amazon_link']?>" id="link" name="link" />
+                      </div>
+                      <div class="mb-3">
                         <label class="form-label" for="basic-icon-default-phone">Date</label>
                         <input class="form-control" type="date" value="<?= $result['date_published']?>" id="date_published" name="date_published" />
                       </div>

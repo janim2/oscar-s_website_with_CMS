@@ -31,6 +31,14 @@
 
                       <div class="row">
                           <div class="col mb-3">
+                              <label for="nameBasic" class="form-label">Amazon link</label>
+                              <input class="form-control" type="text" id="link" name="link"
+                                  required />
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col mb-3">
                               <label for="nameBasic" class="form-label">Date Published</label>
                               <input class="form-control" type="date" id="date_published" name="date_published"
                                   required />

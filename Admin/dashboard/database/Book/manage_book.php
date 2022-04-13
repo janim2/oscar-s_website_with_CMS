@@ -6,31 +6,33 @@
         public $title;
         public $image;
         public $description;
+        public $link;
         public $date_published;
 
         function __construct(){
             $this->title             = $_POST['title'];
-            // $this->image          = $_POST['name'];
             $this->description       = $_POST['description'];
+            $this->link              = $_POST['link'];
             $this->date_published    = $_POST['date_published'];
         }
 
         function update_construct(){
             $this->book_id              = $_COOKIE['oscar_portfolio_book_id'];
             $this->title                = $_POST['title'];
-            // $this->image             = $_POST['name'];
             $this->description          = $_POST['description'];
+            $this->link                 = $_POST['link'];
             $this->date_published       = $_POST['date_published'];
         }
 
         function ConfirmPresence($con){
-            $query = "SELECT * FROM books WHERE title = :ti AND description = :d 
+            $query = "SELECT * FROM books WHERE title = :ti AND description = :d AND amazon_link = :link
                 AND date_published = :dp";
             $statement = $con->prepare($query);
             $statement->execute(
                 array(
                     ":ti"   => $this->title,
                     ":d"    => $this->description, 
+                    ":link" => $this->link,
                     ":dp"   => $this->date_published, 
                 )
             );
@@ -48,9 +50,9 @@
         function SaveInfo($con){
             $temp_img_upload_id = random_int(10, 999999);
 
-            $query = "INSERT INTO books(title, description, date_published, 
+            $query = "INSERT INTO books(title, description, date_published, amazon_link, 
                 tmp_image_upload_id)
-                VALUES(:ti, :d, :dp, :tmp)";
+                VALUES(:ti, :d, :dp, :link, :tmp)";
             $statement = $con->prepare($query);
 
             $has_added = $statement->execute(
@@ -58,6 +60,7 @@
                     ":ti"   => $this->title,
                     ":d"    => $this->description, 
                     ":dp"   => $this->date_published,
+                    ":link" => $this->link, 
                     ":tmp"  => $temp_img_upload_id,
                 )
             );
@@ -72,7 +75,7 @@
         }
 
         function UpdateInfo($con){
-            $query = "UPDATE books SET title = :ti, description = :d, 
+            $query = "UPDATE books SET title = :ti, description = :d, amazon_link = :link, 
                     date_published = :dp WHERE id = :id";
             $statement = $con->prepare($query);
 
@@ -80,6 +83,7 @@
                 array(
                     ":ti"   => $this->title,
                     ":d"    => $this->description, 
+                    ":link" => $this->link,
                     ":dp"   => $this->date_published, 
                     ":id"   => $this->book_id,
                 )
