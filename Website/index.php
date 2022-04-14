@@ -353,30 +353,29 @@
                     <h3>Make an Appointment</h3>
                     <p>Many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
                         in some.</p>
-                    <form action="#">
+                    <form method="POST" id="book_apointment_form">
                         <div class="row">
                             <div class="col-xl-6 col-md-6">
-                                <input type="text" placeholder="Your Name">
+                                <input type="text" placeholder="Your Name" id="name" name="name" required>
                             </div>
                             <div class="col-xl-6 col-md-6">
-                                <input type="email" placeholder="Your Email">
+                                <input type="email" placeholder="Your Email" id="email" name="email" required>
                             </div>
                             <div class="col-xl-6 col-md-6">
-                                <input type="text" placeholder="Phone no.">
+                                <input type="text" placeholder="Phone no." id="phone_number" name="phone_number" required>
                             </div>
                             <div class="col-xl-6 col-md-6">
-                                <input id="datepicker" placeholder="Appointment date">
+                                <input type="date" id="date" placeholder="Appointment date" name="date" required>
                             </div>
                             <div class="col-xl-12">
-                                <textarea placeholder="Message"></textarea>
+                                <textarea placeholder="Message" id="message" name="message" required></textarea>
                             </div>
                             <div class="col-xl-12">
                                 <div class="appoinment_button">
-                                    <button class="boxed-btn5 " type="submit">Submit</button>
+                                    <button class="boxed-btn5 loading" type="submit">Submit</button>
                                 </div>
                             </div>
                         </div>
-
                     </form>
                 </div>
 
@@ -456,3 +455,10 @@
 <!---CUSTOMERS END-->
 
 <?php include_once 'partials/footer.php'; ?>
+
+<script>
+   $(document).on('submit', '#book_apointment_form', function (event) {
+      event.preventDefault();
+      submitFormQuery(this, "database/Apointment/add_apointment.php", ".loading", "Apointment Booked Successfully", false);
+    });
+</script>
