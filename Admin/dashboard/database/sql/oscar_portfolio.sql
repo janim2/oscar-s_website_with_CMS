@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 13, 2022 at 04:44 PM
+-- Generation Time: Apr 15, 2022 at 01:20 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -49,10 +49,11 @@ INSERT INTO `admin_login` (`id`, `fullname`, `username`, `password`) VALUES
 
 CREATE TABLE `appointments` (
   `id` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
   `fullname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phonenumber` bigint(11) NOT NULL,
+  `message` varchar(5000) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -60,9 +61,10 @@ CREATE TABLE `appointments` (
 -- Dumping data for table `appointments`
 --
 
-INSERT INTO `appointments` (`id`, `status`, `fullname`, `email`, `phonenumber`, `date`) VALUES
-(1, 0, 'Jesse ', 'Anim', 233554368510, '2022-04-07'),
-(2, 1, 'Henry Ford', 'email@gmail.com', 233268977129, '2022-04-13');
+INSERT INTO `appointments` (`id`, `status`, `fullname`, `email`, `phonenumber`, `message`, `date`) VALUES
+(1, 0, 'Jesse ', 'Anim', 233554368510, '', '2022-04-07'),
+(2, 1, 'Henry Ford', 'email@gmail.com', 233268977129, '', '2022-04-13'),
+(3, 0, 'Jesse', 'iamjesse75@gmail.com', 268977129, 'i want to meet you', '2022-04-20');
 
 -- --------------------------------------------------------
 
@@ -176,6 +178,29 @@ INSERT INTO `comments` (`id`, `comment`, `blog_id`, `name`, `email`, `date_added
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `message` varchar(1000) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `message`, `name`, `email`, `subject`, `date_added`) VALUES
+(1, 'kklfjlksdjfklsjkljkljkjkljljkljkl', 'lkjdlfkdjslk', 'sdfldsfjl@gmail.com', 'lkjdfklsdj', '2022-04-13 15:10:38'),
+(2, 'sdfsdffsdfsdfdsdfs', 'dsfsdfs', 'dd@gmail.com', 'dfsdf', '2022-04-13 15:11:30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `testimony`
 --
 
@@ -243,6 +268,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `testimony`
 --
 ALTER TABLE `testimony`
@@ -262,7 +293,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `blogs`
@@ -292,6 +323,12 @@ ALTER TABLE `book_images`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
