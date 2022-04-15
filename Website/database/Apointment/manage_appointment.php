@@ -66,11 +66,79 @@
 
             if($has_added){
                 //set up google calender event
+                $this->sendEmailToOscar($this->name, $this->email, $this->message, $this->phone, $this->date);
+                $this->sendEmailToPerson($this->name, $this->email, $this->message, $this->phone, $this->date);
                 // $this->upload_images($con, fetchBookPostIdUsingTempImgUploadID($con, $temp_img_upload_id));
                 echo 1;
             }
             else{
                 echo "Something went wrong";
+            }
+        }
+
+        function sendEmailToOscar($name, $email, $message, $phone, $date){
+            $from = $email;
+    
+            $headers = "From: $from";
+            $headers = "From: " . $from . "\r\n";
+            $headers .= "Reply-To: ". $from . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        
+            //$subject = "<b>{$name}</b>";
+        
+            // $logo = 'http://willfind8.com/img/will.jpg';
+            $link = '#';
+        
+            $body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>APPOINTMENT</title></head><body>";
+            // $body .= "<a href='{$link}'><img src='{$logo}' alt=''></a><br><br>";
+            $body .= "<p>An appointment has been booked by {$name}. Details are as follows;</p>";
+            $body .= "<table style='width: 100%;'>";
+            $body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
+            $body .= "</td></tr></thead><tbody><tr>";
+            $body .= "<td style='border:none;'><strong>name:</strong> {$name}</td></tr>";
+            $body .= "<tr><td style='border:none;'><strong>email:</strong> {$from}</td>";
+            $body .= "</tr>";
+            $body .= "<tr><td style='border:none;'><strong>phonenumber:</strong> {$phone}</td>";
+            $body .= "</tr>";
+            $body .= "<tr><td style='border:none;'><strong>date:</strong> {$date}</td>";
+            $body .= "</tr>";
+            $body .= "<tr><td style='border:none'><strong>Message:</strong></td></tr>";
+            $body .= "<tr><td colspan='2' style='border:none;'>{$message}</td></tr>";
+            $body .= "</tbody></table>";
+            $body .= "</body></html>";
+        
+            $send = mail("iamjesse75@gmail.com,", "APPOINTMENT WITH OSCAR", $body, $headers);
+            
+            if($send){
+                // echo "mail sent";
+            }
+        }
+
+        function sendEmailToPerson($name, $email, $message, $phone, $date){
+            $from = "support@oscar.com";
+            $date = dateFormat($date);
+
+            $headers = "From: $from";
+            $headers = "From: " . $from . "\r\n";
+            $headers .= "Reply-To: ". $from . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        
+            //$subject = "<b>{$name}</b>";
+        
+            // $logo = 'http://willfind8.com/img/will.jpg';
+            $link = '#';
+        
+            $body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>APPOINTMENT</title></head><body>";
+            // $body .= "<a href='{$link}'><img src='{$logo}' alt=''></a><br><br>";
+            $body .= "<p>Your appointment has been booked for ${date}. Contact Oscar Bimpong on +233268977129 to finalize the apointment.</p>";
+            $body .= "</body></html>";
+        
+            $send = mail("${email},", "APPOINTMENT WITH OSCAR", $body, $headers);
+            
+            if($send){
+                // echo "mail sent";
             }
         }
 

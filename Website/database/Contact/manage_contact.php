@@ -61,7 +61,7 @@
 
             if($has_added){
                 //send email to Oscar
-                sendEmail($name, $email, $subject, $message);
+                $this->sendEmail($this->name, $this->email, $this->subject, $this->message);
                 // $this->upload_images($con, fetchBookPostIdUsingTempImgUploadID($con, $temp_img_upload_id));
                 echo 1;
             }
