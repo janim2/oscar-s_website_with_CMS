@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 15, 2022 at 01:20 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Host: localhost:3306
+-- Generation Time: May 06, 2022 at 05:04 AM
+-- Server version: 5.6.51-cll-lve
+-- PHP Version: 7.3.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -49,7 +50,7 @@ INSERT INTO `admin_login` (`id`, `fullname`, `username`, `password`) VALUES
 
 CREATE TABLE `appointments` (
   `id` int(11) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0,
+  `status` int(11) NOT NULL DEFAULT '0',
   `fullname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phonenumber` bigint(11) NOT NULL,
@@ -64,7 +65,9 @@ CREATE TABLE `appointments` (
 INSERT INTO `appointments` (`id`, `status`, `fullname`, `email`, `phonenumber`, `message`, `date`) VALUES
 (1, 0, 'Jesse ', 'Anim', 233554368510, '', '2022-04-07'),
 (2, 1, 'Henry Ford', 'email@gmail.com', 233268977129, '', '2022-04-13'),
-(3, 0, 'Jesse', 'iamjesse75@gmail.com', 268977129, 'i want to meet you', '2022-04-20');
+(3, 0, 'Jesse', 'iamjesse75@gmail.com', 268977129, 'i want to meet you', '2022-04-20'),
+(4, 0, 'Jesse', 'animjesse55@gmail.com', 268977129, 'Testing apointment', '2022-04-16'),
+(5, 0, 'Michael ', 'animjesse55@gmail.com', 268977129, 'Hi', '2022-04-22');
 
 -- --------------------------------------------------------
 
@@ -76,10 +79,10 @@ CREATE TABLE `blogs` (
   `id` int(11) NOT NULL,
   `tmp_image_upload_id` int(11) NOT NULL,
   `title` text NOT NULL,
-  `content` varchar(1000) NOT NULL,
+  `content` varchar(5000) NOT NULL,
   `tags` varchar(255) NOT NULL,
   `show_comments` int(11) NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -123,7 +126,7 @@ CREATE TABLE `books` (
   `date_published` date NOT NULL,
   `amazon_link` varchar(255) NOT NULL,
   `tmp_image_upload_id` int(11) NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -165,7 +168,7 @@ CREATE TABLE `comments` (
   `blog_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -187,7 +190,7 @@ CREATE TABLE `contact` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `subject` varchar(255) NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -195,8 +198,20 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `message`, `name`, `email`, `subject`, `date_added`) VALUES
-(1, 'kklfjlksdjfklsjkljkljkjkljljkljkl', 'lkjdlfkdjslk', 'sdfldsfjl@gmail.com', 'lkjdfklsdj', '2022-04-13 15:10:38'),
-(2, 'sdfsdffsdfsdfdsdfs', 'dsfsdfs', 'dd@gmail.com', 'dfsdf', '2022-04-13 15:11:30');
+(7, 'getting in touch8', 'Jesse Anim', 'iamjesse75@gmail.com', 'Getting in touch with you', '2022-04-15 14:39:53'),
+(8, 'Fixing the people in time', 'Jesse Anim', 'iamjesse75@gmail.com', 'Fellow Ghanaians', '2022-04-15 15:03:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `speaker_images`
+--
+
+CREATE TABLE `speaker_images` (
+  `id` int(11) NOT NULL,
+  `testimony_id` int(11) NOT NULL,
+  `image_url` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -209,17 +224,18 @@ CREATE TABLE `testimony` (
   `testimony` varchar(1000) NOT NULL,
   `speaker` varchar(255) NOT NULL,
   `position` varchar(255) NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `tmp_image_upload_id` int(11) NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `testimony`
 --
 
-INSERT INTO `testimony` (`id`, `testimony`, `speaker`, `position`, `date_added`) VALUES
-(4, 'Oscar writes and gives extremely powerful insights into using the creative power<br> of your\n                            thoughts to think, dream, create and accomplish one’s life’s goals<br> no matter who you\n                            are, where you’re born and social standing. An insightful book!', 'Frederick Amissah', 'CEO -Universal Hospitals Group', '2022-04-13 06:57:36'),
-(5, 'I sat in a session when Oscar Bimpong did a presentation for the\r\n                            playing body and <br>technical team of Asante Kotoko(a football Club in Ghana).<br>I was\r\n                            very much impacted positively', 'Akua Pokua Kwarteng', 'Head of Legal (Domestic) of Asante Kotoko Sporting Club', '2022-04-13 06:55:59'),
-(6, 'The mindset Revolution book is indeed a strong transformational\r\n                            book.It has been very resourceful as British International School uses the book to help\r\n                            transform the thinking of our students in secondary. Since they started using the book, they\r\n                            have begun to take control of their learning, go the extra mile in their studies and managed\r\n                            peer pressure', 'Franklin Adjetey', 'School Principal - British International School', '2022-04-13 06:57:00');
+INSERT INTO `testimony` (`id`, `testimony`, `speaker`, `position`, `tmp_image_upload_id`, `date_added`) VALUES
+(4, 'Oscar writes and gives extremely powerful insights into using the creative power<br> of your\n                            thoughts to think, dream, create and accomplish one’s life’s goals<br> no matter who you\n                            are, where you’re born and social standing. An insightful book!', 'Frederick Amissah', 'CEO -Universal Hospitals Group', 0, '2022-04-13 06:57:36'),
+(5, 'I sat in a session when Oscar Bimpong did a presentation for the\r\n                            playing body and <br>technical team of Asante Kotoko(a football Club in Ghana).<br>I was\r\n                            very much impacted positively', 'Akua Pokua Kwarteng', 'Head of Legal (Domestic) of Asante Kotoko Sporting Club', 0, '2022-04-13 06:55:59'),
+(6, 'The mindset Revolution book is indeed a strong transformational\r\n                            book.It has been very resourceful as British International School uses the book to help\r\n                            transform the thinking of our students in secondary. Since they started using the book, they\r\n                            have begun to take control of their learning, go the extra mile in their studies and managed\r\n                            peer pressure', 'Franklin Adjetey', 'School Principal - British International School', 0, '2022-04-13 06:57:00');
 
 --
 -- Indexes for dumped tables
@@ -274,6 +290,12 @@ ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `speaker_images`
+--
+ALTER TABLE `speaker_images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `testimony`
 --
 ALTER TABLE `testimony`
@@ -293,7 +315,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `blogs`
@@ -311,7 +333,7 @@ ALTER TABLE `blog_images`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `book_images`
@@ -329,7 +351,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `speaker_images`
+--
+ALTER TABLE `speaker_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `testimony`
