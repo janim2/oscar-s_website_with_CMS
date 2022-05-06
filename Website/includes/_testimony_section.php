@@ -18,9 +18,9 @@
                                     <i class="flaticon-straight-quotes"></i>
                                     <p><?= $t_result['testimony']; ?></p>
                                     <div class="author_info d-flex justify-content-center align-items-center">
-                                        <!-- <div class="thumb">
-                                            <img src="img/testmonial/kotoko.jpeg" alt="">
-                                        </div> -->
+                                        <div class="thumb">
+                                            <img class="rounded-circle" src="img/speakers/<?= fetchFirstTestimonyImage($con, $t_result['id'])?>" alt="">
+                                        </div>
                                         <span>- <?= $t_result['speaker']?> (<?= $t_result['position']?>)
                                         </span>
                                     </div>

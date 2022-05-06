@@ -39,6 +39,19 @@
         return $result['image_url'];
     }
 
+    function fetchFirstTestimonyImage($con, $testimony_id){
+        $query = "SELECT image_url FROM speaker_images WHERE testimony_id = :id LIMIT 1";
+        $statement = $con->prepare($query);
+
+        $statement->execute(
+            array(
+                ":id" => $testimony_id,
+            )
+        );
+        $result = $statement->fetch();
+        return $result['image_url'];
+    }
+
     function dateFormat($date){
         return date('l, M j, Y', strtotime($date));
     }
