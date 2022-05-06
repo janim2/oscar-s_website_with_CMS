@@ -39,6 +39,19 @@
         return $result['image_url'];
     }
 
+    function fetchFirstSpeakerImage($con, $project_id){
+        $query = "SELECT image_url FROM speaker_images WHERE testimony_id = :id LIMIT 1";
+        $statement = $con->prepare($query);
+
+        $statement->execute(
+            array(
+                ":id" => $project_id,
+            )
+        );
+        $result = $statement->fetch();
+        return $result['image_url'];
+    }
+
     function dateFormat($date){
         return date('l, M j, Y', strtotime($date));
     }
@@ -74,6 +87,20 @@
 
     function fetchBookPostIdUsingTempImgUploadID($con, $tmp_img_upload_id){
         $query      = "SELECT id FROM books WHERE tmp_image_upload_id = :temp_img_upload_id";
+        $statement  = $con->prepare($query);
+
+        $statement->execute(
+            array(
+                ":temp_img_upload_id" => $tmp_img_upload_id,
+            )
+        );
+        $result = $statement->fetch();
+        return $result['id'];
+    }
+
+    
+    function fetchTestimonyIdUsingTempImgUploadID($con, $tmp_img_upload_id){
+        $query      = "SELECT id FROM testimony WHERE tmp_image_upload_id = :temp_img_upload_id";
         $statement  = $con->prepare($query);
 
         $statement->execute(

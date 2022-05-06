@@ -25,6 +25,13 @@
 
                     <div class="row">
                         <div class="col mb-3">
+                            <label for="nameBasic" class="form-label">Image of Speaker</label>
+                            <input class="form-control" type="file" name="files[]" required />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col mb-3">
                             <label for="nameBasic" class="form-label">Position</label>
                             <input type="text" id="position" name="position" class="form-control"
                                 placeholder="Enter Position" required />

@@ -63,7 +63,9 @@
                       <p>
                       <?= strlen($results['testimony']) <= 210 ? $results['testimony']  : substr($results['testimony'] , 0, 210) . "...";?>
                       </p>
-                      <footer class="blockquote-footer">
+                      <img src="http://localhost/oscar/Website/img/speakers/<?=fetchFirstSpeakerImage($con, $results['id'])?>" class="rounded-circle" alt="No image" height="100" width="100"> 
+                      <br>
+                      <footer class="blockquote-footer mt-2">
                         <?= $results['speaker']; ?>
                         <cite title="Source Title">(<?= $results['position']; ?>)</cite>
                         <div class="card-body">

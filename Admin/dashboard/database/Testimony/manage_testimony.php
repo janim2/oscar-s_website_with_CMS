@@ -43,8 +43,9 @@
         }
 
         function SaveInfo($con){
-            $query = "INSERT INTO testimony(testimony, speaker, position)
-                VALUES(:t, :s, :p)";
+            $temp_img_upload_id = random_int(10, 999999);
+            $query = "INSERT INTO testimony(testimony, speaker, position, tmp_image_upload_id)
+                VALUES(:t, :s, :p, :tmp)";
             $statement = $con->prepare($query);
 
             $has_added = $statement->execute(
@@ -52,11 +53,12 @@
                     ":t"   => $this->testimony,
                     ":s"   => $this->speaker, 
                     ":p"   => $this->position, 
+                    ":tmp" => $temp_img_upload_id,
                 )
             );
 
             if($has_added){
-                // $this->upload_images($con, fetchBookPostIdUsingTempImgUploadID($con, $temp_img_upload_id));
+                $this->upload_images($con, fetchTestimonyIdUsingTempImgUploadID($con, $temp_img_upload_id));
                 echo 1;
             }
             else{
@@ -79,6 +81,7 @@
             );
 
             if($has_added){
+                $this->upload_images($con, fetchBlogPostIdUsingTempImgUploadID($con, $temp_img_upload_id));
                 echo 1;
             }
             else{
@@ -87,60 +90,60 @@
         }
 
 
-        // function upload_images($con, $post_id){
-        //     extract($_POST);
-        //     $error=array();
+        function upload_images($con, $post_id){
+            extract($_POST);
+            $error=array();
 
-        //     $txtGalleryName = "books";
-        //     $images_array = array();
+            $txtGalleryName = "speakers";
+            $images_array = array();
 
-        //     $img_path = "../../../../Website/img/";
+            $img_path = "../../../../Website/img/";
 
-        //     $extension=array("jpeg","jpg","png","gif");
-        //     foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
-        //         $file_name=$_FILES["files"]["name"][$key];
-        //         $file_tmp=$_FILES["files"]["tmp_name"][$key];
-        //         $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+            $extension=array("jpeg","jpg","png","gif");
+            foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
+                $file_name=$_FILES["files"]["name"][$key];
+                $file_tmp=$_FILES["files"]["tmp_name"][$key];
+                $ext=pathinfo($file_name,PATHINFO_EXTENSION);
 
-        //         if(in_array($ext,$extension)) {
-        //             if(!file_exists($img_path.$txtGalleryName."/".$file_name)) {
-        //                 move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],$img_path.$txtGalleryName."/".$file_name);
-        //                 // echo $file_name;
-        //                 // array_push($images_array, $file_name);
-        //                 $this->SaveToImagesDatabase($con, $post_id, $file_name);
-        //             }
-        //             else {
-        //                 $filename=basename($file_name,$ext);
-        //                 $newFileName=$filename.time().".".$ext;
-        //                 move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],$img_path.$txtGalleryName."/".$newFileName);
-        //                 // echo $file_name;
-        //                 // array_push($images_array, $file_name);
-        //                 $this->SaveToImagesDatabase($con, $post_id, $file_name);
-        //             }
-        //         }
-        //         else {
-        //             array_push($error,"$file_name, ");
-        //         }
-        //     }
-        // }
+                if(in_array($ext,$extension)) {
+                    if(!file_exists($img_path.$txtGalleryName."/".$file_name)) {
+                        move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],$img_path.$txtGalleryName."/".$file_name);
+                        // echo $file_name;
+                        // array_push($images_array, $file_name);
+                        $this->SaveToImagesDatabase($con, $post_id, $file_name);
+                    }
+                    else {
+                        $filename=basename($file_name,$ext);
+                        $newFileName=$filename.time().".".$ext;
+                        move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],$img_path.$txtGalleryName."/".$newFileName);
+                        // echo $file_name;
+                        // array_push($images_array, $file_name);
+                        $this->SaveToImagesDatabase($con, $post_id, $file_name);
+                    }
+                }
+                else {
+                    array_push($error,"$file_name, ");
+                }
+            }
+        }
 
-        // function SaveToImagesDatabase($con, $id, $file_name){
-        //     $query = "INSERT INTO book_images(book_id, image_url) VALUES(:book_id, :image_url)";
-        //         $statement = $con->prepare($query);
-        //         $result = $statement->execute(
-        //             array(
-        //                 ":book_id"      => $id,
-        //                 ":image_url"    => $file_name,
-        //             )
-        //         );
+        function SaveToImagesDatabase($con, $id, $file_name){
+            $query = "INSERT INTO speaker_images(testimony_id, image_url) VALUES(:testimony_id, :image_url)";
+                $statement = $con->prepare($query);
+                $result = $statement->execute(
+                    array(
+                        ":testimony_id" => $id,
+                        ":image_url"    => $file_name,
+                    )
+                );
 
-        //         if($result){
-        //             // echo "success";
-        //         }
-        //         else{
-        //             echo "Something went wrong";
-        //         }
-        // }
+                if($result){
+                    // echo "success";
+                }
+                else{
+                    echo "Something went wrong";
+                }
+        }
 
     }
 ?>
