@@ -33,7 +33,7 @@ function submitFormQuery(context, url, loading_elem, success_message, isLogin = 
                         showConfirmButton: false,
                         timer: 1500,
                         }).then((result) => {
-                            location.href = 'index.php';
+                            location.href = 'dashboard/index.php';
                         });
                 }
                 else{
@@ -83,7 +83,7 @@ function submitQuery(url, loading_elem, success_message, isLogOut = false){
                         showConfirmButton: false,
                         timer: 1500,
                       }).then((result) => {
-                          location.href = 'login.php';
+                          location.href = '../index.php';
                         })
                 }else{
                     Swal.fire({

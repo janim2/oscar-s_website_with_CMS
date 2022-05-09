@@ -2,6 +2,7 @@
   require_once 'partials/header.php'; 
   require_once 'database/config.php';
   require_once 'helpers/functions.php';
+  require_once 'helpers/constants.php';
 
   $query = "SELECT * FROM blogs";
   $statement = $con->prepare($query);
@@ -53,7 +54,7 @@
                     <span class="badge bg-label-primary">Fishes</span> -->
                     <!-- <h6 class="card-subtitle text-muted">Support card subtitle</h6> -->
                   </div>  
-                  <img class="img-fluid" src="http://localhost/oscar/Website/img/blog/<?=fetchFirstBlogImage($con, $results['id'])?>" alt="Card image cap" />
+                  <img class="img-fluid" src="<?=$blog_images_url.fetchFirstBlogImage($con, $results['id'])?>" alt="Card image cap" />
 
                   <div class="card-body">
                     <!-- <span class="badge bg-success">Comments enabled</span> -->

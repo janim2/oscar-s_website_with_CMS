@@ -2,6 +2,7 @@
   require_once 'partials/header.php'; 
   require_once 'database/config.php';
   require_once 'helpers/functions.php';
+  require_once 'helpers/constants.php';
 
   $i = 1;
 
@@ -63,7 +64,7 @@
                       <p>
                       <?= strlen($results['testimony']) <= 210 ? $results['testimony']  : substr($results['testimony'] , 0, 210) . "...";?>
                       </p>
-                      <img src="http://localhost/oscar/Website/img/speakers/<?=fetchFirstSpeakerImage($con, $results['id'])?>" class="rounded-circle" alt="No image" height="100" width="100"> 
+                      <img src="<?=$speaker_images_url.fetchFirstSpeakerImage($con, $results['id'])?>" class="rounded-circle" alt="No image" height="100" width="100"> 
                       <br>
                       <footer class="blockquote-footer mt-2">
                         <?= $results['speaker']; ?>

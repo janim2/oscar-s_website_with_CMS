@@ -2,6 +2,8 @@
   require_once 'partials/header.php'; 
   require_once 'database/config.php';
   require_once 'helpers/functions.php';
+  require_once 'helpers/constants.php'; 
+
 
   $ref = $_GET['bb_ref'];
 
@@ -44,7 +46,7 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img class="card-img card-img-left" src="http://localhost/oscar/Website/img/books/<?=fetchFirstBookImage($con, $result['id'])?>" style="object-fit: contain" alt="Card image" />
+              <img class="card-img card-img-left" src="<?=$book_images_url.fetchFirstBookImage($con, $result['id'])?>" style="object-fit: contain" alt="Card image" />
             </div>
             <div class="col-md-8">
               <div class="card-body">

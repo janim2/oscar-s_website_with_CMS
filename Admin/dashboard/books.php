@@ -2,6 +2,7 @@
   require_once 'partials/header.php'; 
   require_once 'database/config.php';
   require_once 'helpers/functions.php';
+  require_once 'helpers/constants.php';
 
   $query = "SELECT * FROM books";
   $statement = $con->prepare($query);
@@ -51,7 +52,7 @@
           foreach($result as $results){?>
             <div class="col-md-6 col-lg-4">
               <div class="card">
-                <img class="card-img-top" src="http://localhost/oscar/Website/img/books/<?=fetchFirstBookImage($con, $results['id'])?>" alt="Card image cap" />
+                <img class="card-img-top" src="<?=$book_images_url.fetchFirstBookImage($con, $results['id'])?>" alt="Card image cap" />
                 <div class="card-body">
                   <h5 class="card-title"><?= $results['title']; ?></h5>
                   <p class="card-text"><?= strlen($results['description']) <= 210 ? $results['description']  : substr($results['description'] , 0, 210) . "...";?></p>

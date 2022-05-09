@@ -2,6 +2,8 @@
   require_once 'partials/header.php'; 
   require_once 'database/config.php';
   require_once 'helpers/functions.php';
+  require_once 'helpers/constants.php'; 
+
 
   $ref = $_GET['ref'];
 
@@ -27,10 +29,10 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Dashboard</a>
+          <a href="index.php">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="books.html">Blog</a>
+          <a href="blogs.php">Blog</a>
         </li>
 
         <li class="breadcrumb-item active">Edit Blog Post</li>
@@ -45,7 +47,7 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img class="card-img card-img-left" src="http://localhost/oscar/Website/img/blog/<?=fetchFirstBlogImage($con, $result['id'])?>" style="object-fit: contain" alt="Card image" />
+              <img class="card-img card-img-left" src="<?=$blog_images_url.fetchFirstBlogImage($con, $result['id'])?>" style="object-fit: contain" alt="Card image" />
             </div>
             <div class="col-md-8">
               <div class="card-body">
