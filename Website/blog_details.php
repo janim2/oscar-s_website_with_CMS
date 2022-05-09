@@ -2,6 +2,7 @@
     include_once 'partials/header.php'; 
     require_once 'database/config.php';
     require_once 'helpers/functions.php'; 
+    require_once 'helpers/constants.php'; 
 
     $ref = $_GET['ref'];
 
@@ -40,7 +41,7 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="http://localhost/oscar/Website/img/blog/<?=fetchFirstBlogImage($con, $ref)?>" style="object-fit: contain;" width="900" height="180" alt="">
+                     <img class="img-fluid" src="<?=$blog_images_url.fetchFirstBlogImage($con, $ref)?>" style="object-fit: contain;" width="900" height="180" alt="">
                   </div>
                   <div class="blog_details">
                      <h2><?= $result['title']; ?></h2>

@@ -19,7 +19,7 @@
                                     <p><?= $t_result['testimony']; ?></p>
                                     <div class="author_info d-flex justify-content-center align-items-center">
                                         <div class="thumb">
-                                            <img class="rounded-circle" src="img/speakers/<?= fetchFirstTestimonyImage($con, $t_result['id'])?>" alt="">
+                                            <img class="rounded-circle" src="<?= $speaker_images_url.fetchFirstTestimonyImage($con, $t_result['id'])?>" alt="">
                                         </div>
                                         <span>- <?= $t_result['speaker']?> (<?= $t_result['position']?>)
                                         </span>

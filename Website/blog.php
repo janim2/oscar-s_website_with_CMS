@@ -2,6 +2,8 @@
     include_once 'partials/header.php'; 
     require_once 'database/config.php';
     require_once 'helpers/functions.php'; 
+    require_once 'helpers/constants.php'; 
+
 ?>
 
 <!-- bradcam_area_start  -->
@@ -38,7 +40,7 @@
                             foreach($bl_row as $bl_result){?>
                                 <article class="blog_item">
                                     <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="http://localhost/oscar/Website/img/blog/<?=fetchFirstBlogImage($con, $bl_result['id'])?>" style="object-fit: cover;" alt="">
+                                        <img class="card-img rounded-0" src="<?=$blog_images_url.fetchFirstBlogImage($con, $bl_result['id'])?>" style="object-fit: cover;" alt="">
                                         <a href="#" class="blog_item_date">
                                             <h3><?= dateFormat($bl_result['date_added']); ?></h3>
                                             <!-- <p>Jan</p> -->

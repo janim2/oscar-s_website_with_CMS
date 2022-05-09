@@ -23,7 +23,7 @@
             <div class="col-xl-4 col-md-6 col-lg-4">
                 <div class="single_loyers text-center">
                     <div class="thumb">
-                        <img src="http://localhost/oscar/Website/img/books/<?=fetchFirstBookImage($con, $b_result['id'])?>"
+                        <img src="<?=$book_images_url.fetchFirstBookImage($con, $b_result['id'])?>"
                             style="object-fit: contain" alt="">
                     </div>
                     <h3><?= $b_result['title']?></h3>
