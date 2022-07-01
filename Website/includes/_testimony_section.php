@@ -16,11 +16,20 @@
                             foreach($t_row as $t_result){?>
                                 <div class="single_testmonial text-center">
                                     <i class="flaticon-straight-quotes"></i>
-                                    <p><?= $t_result['testimony']; ?></p>
-                                    <div class="author_info d-flex justify-content-center align-items-center">
-                                        <div class="thumb">
-                                            <img class="rounded-circle" src="<?= $speaker_images_url.fetchFirstTestimonyImage($con, $t_result['id'])?>" alt="">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <img class="rounded-circle" src="<?= $speaker_images_url.fetchFirstTestimonyImage($con, $t_result['id'])?>" alt="" style="object-fit: cover;width: 250px; height: 250px;display: block;
+                                            margin-left: auto;margin-right: auto;">
+
                                         </div>
+                                        <div class="col-md-8">
+                                            <p><?= $t_result['testimony']; ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="author_info d-flex justify-content-center align-items-center">
+                                        <!-- <div class="thumb">
+                                            <img class="rounded-circle" src="<?= $speaker_images_url.fetchFirstTestimonyImage($con, $t_result['id'])?>" alt="" height="200" width="200">
+                                        </div> -->
                                         <span>- <?= $t_result['speaker']?> (<?= $t_result['position']?>)
                                         </span>
                                     </div>
