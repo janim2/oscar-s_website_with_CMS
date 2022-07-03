@@ -1,5 +1,5 @@
 <?php
-    include_once 'partials/header.php'; 
+    include_once 'partials/blog_header.php'; 
     require_once 'database/config.php';
     require_once 'helpers/functions.php'; 
     require_once 'helpers/constants.php'; 
@@ -25,7 +25,7 @@
            <div class="row">
                <div class="col-xl-12">
                    <div class="bradcam_text text-center">
-                       <h3>Blog Detials </h3>
+                       <h3>Blog Details </h3>
                    </div>
                </div>
            </div>

@@ -41,21 +41,24 @@
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid p-0">
                     <div class="row align-items-center justify-content-between no-gutters">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img">
-                                <a href="index.php">
-                                    <img style="width: 172px; height: 100px;" src="img/Oscar.png" alt="">
-                                </a>
-                            </div>
+                        <div class="col-xl-1 col-lg-1">
+                            <img class="rounded-circle" src="img/Oscar.png" width="70px" style="background: white;/>
+                            <!--<div style="background: #ECECEB; border-radius: 50%; width: 170px; height: 80px;" class="logo-img">
+                           
+                            <!--    <a href="index.php">-->
+                            <!--        <img style="width: 172px; height: 100px;" src="img/Oscar.png" alt="">-->
+                            <!--    </a>-->
+                             
+                            <!--</div>-->
                         </div>
                         <div class="col-xl-7 col-lg-8">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.php">home</a></li>
+                                        <li><a href="index.php">home</a></li>
                                         <li><a href="about.php">About</a></li>
                                         <li><a href="practice.php">Services</a></li>
-                                        <li><a href="blog.php">blog</i></a>
+                                        <li><a class="active" href="blog.php">blog</i></a>
 
                                         </li>
                                         <li><a href="contact.php">Contact</a></li>
@@ -66,9 +69,10 @@
                         <div class="col-xl-3 col-lg-2 d-none d-lg-block">
                             <div class="social_media_links">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                    <li><a href="https://www.facebook.com/oscar.bimpong"> <i class="fa fa-facebook"></i> </a></li>
+                                    <li><a href="https://twitter.com/oscarbimpong"> <i class="fa fa-twitter"></i> </a></li>
+                                    <li><a href="https://www.instagram.com/oscarbimpong/"> <i class="fa fa-instagram"></i> </a></li>
+                                    <li><a href="https://www.linkedin.com/in/oscarbimpong/"> <i class="fa fa-linkedin"></i> </a></li>
                                 </ul>
                             </div>
                         </div>

@@ -1,9 +1,8 @@
 <?php
-    include_once 'partials/header.php'; 
+    include_once 'partials/services_header.php'; 
     require_once 'database/config.php';
     require_once 'helpers/functions.php'; 
     require_once 'helpers/constants.php'; 
-
 ?>
 
 <!-- bradcam_area_start  -->

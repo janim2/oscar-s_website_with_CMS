@@ -1,5 +1,5 @@
 <?php
-    include_once 'partials/header.php'; 
+    include_once 'partials/contact_header.php'; 
     require_once 'database/config.php';
     require_once 'helpers/functions.php'; 
 ?>

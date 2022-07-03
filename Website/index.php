@@ -1,6 +1,6 @@
 <?php
 
-    include_once 'partials/header.php'; 
+    include_once 'partials/home_header.php'; 
     require_once 'database/config.php';
     require_once 'helpers/functions.php'; 
     require_once 'helpers/constants.php'; 
