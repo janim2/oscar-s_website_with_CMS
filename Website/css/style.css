@@ -1017,21 +1017,32 @@ h3 {
 }
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-.slider_bg_1 {
-  background-image: url(../img/banner/cd.png);
+.image_background{
   background-color: #020c26;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
- 
-    
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
-.slider_bg_3 {
-  background-image: url(../img/banner/bc.png);
+
+.slider_bg_1 {
+  background-image: url(../img/oscar1.png);
   background-color: #020c26;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
- 
-    
+  border-bottom-right-radius: 20px;
+  object-fit: none;
+  width: 50%;
+}
+
+.slider_bg_3 {
+  background-image: url(../img/oscar2.png);
+  /* background-color: #020c26; */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+  background-repeat: no-repeat;
 }
 .slider_bg_4 {
   background-image: url(../img/banner/abc.png);
@@ -1066,7 +1077,7 @@ h3 {
 
 /* line 14, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
 .slider_area_inner {
-  height: 800px;
+  height: 500px;
   position: relative;
   z-index: 8;
   position: relative;

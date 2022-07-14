@@ -4,65 +4,124 @@
     require_once 'database/config.php';
     require_once 'helpers/functions.php'; 
     require_once 'helpers/constants.php'; 
-
 ?>
+
 <!-- slider_area_start -->
-<div class="testmonial_active owl-carousel" style="background-color: #265fa6;">
-    <div class="slider_area_inner slider_bg_1 d-flex align-items-center" style="margin-left: 20px; margin-right: 20px;">
+<div class="testmonial_active owl-carousel darker" style="background-color: #265fa6; height: 518px;">
+    <div class="slider_area_inner d-flex align-items-center" style="margin-left: 20px; margin-right: 50px;">
         <div class="container">
             <div class="row">
-                <div class="col-xl-7">
+                <div class="col-xl-12">
                     <div class="single_slider">
-                        <div class="slider_text">
-                            <h3>High Quality Motivation</h3>
-                            <p style="text-align: justify; margin-right: 20px;" class="intro-text">Oscar is the guy that
-                                stirs your comfort zone to take you through the muddy waters and then get you out to be
-                                the refined gold of your vision.</p>
+                        <div class="row image_background">
+                            <div class="col-md-6 col-sm-12 col-xl-6">
+                                <div class="slider_text">
+                                    <!-- <h3>High Quality Motivation</h3> -->
+                                    <p class="intro-text" style="text-align: justify; margin-right: 20px; margin-top: 20%">"Oscar is the
+                                        guy that
+                                        stirs your comfort zone to take you through the muddy waters and then get you
+                                        out to be
+                                        the refined gold of your vision."</p>
+                                    <!-- <a href="about.php" class="boxed-btn4 ">Learn More</a> -->
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xl-6 one">
+                                <img src="img/oscar1.png" style="object-fit: cover; width: 700px;padding-right: 120px;">
+                            </div>
                             <style>
-                                @media (max-width: 767px) {
+                                @media (max-width: 500px) {
+                                
                                     .intro-text {
-                                        width: 250px;
+                                        width: 270px;
+                                        position: relative;
+                                        right: 50px;
+                                    }
+
+                                    .one{
+                                        display:none;
                                     }
                                 }
                             </style>
-                            <a href="about.html" class="boxed-btn4 ">Learn More</a>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    <div class="slider_area_inner slider_bg_4 d-flex align-items-center" style="margin-left: 20px; margin-right: 20px;">
+    <div class="slider_area_inner d-flex align-items-center" style="margin-left: 20px; margin-right: 20px;">
         <div class="container">
             <div class="row">
-                <div class="col-xl-7">
+                <div class="col-xl-12">
                     <div class="single_slider">
-                        <div class="slider_text">
-                            <h3>High Quality Motivation</h3>
-                            <p style="text-align: justify; margin-right: 20px;" class="intro-text">My mandate is to work
-                                on your mind such that you achieve every vision you put your mind to.</p>
-                            <a href="#" class="boxed-btn4 ">Learn More</a>
+                        <div class="row image_background">
+                            <div class="col-sm-6">
+                                <div class="slider_text">
+                                    <!-- <h3>High Quality Motivation</h3> -->
+                                    <p class="intro-text" style="text-align: justify; margin-right: 20px;margin-top: 20%">"My mandate is
+                                        to work
+                                        on your mind such that you achieve every vision you put your mind to."</p>
+                                   
+                                    <!-- <a href="about.php" class="boxed-btn4 ">Learn More</a> -->
+                                </div>
+                            </div>
+                            <div class="col-sm-6 one">
+                                <img src="img/oscar3.png" style="object-fit: cover; width: 700px;padding-right: 120px;">
+                            </div>
+                            <style>
+                                @media (max-width: 467px) {
+                                
+                                    .intro-text {
+                                        width: 270px;
+                                        position: relative;
+                                        right: 50px;
+                                    }
+
+                                    .one{
+                                        display:none;
+                                    }
+                                }
+                            </style>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="slider_area_inner slider_bg_3 d-flex align-items-center" style="margin-left: 20px; margin-right: 20px;">
+    <div class="slider_area_inner d-flex align-items-center" style="margin-left: 20px; margin-right: 20px;">
         <div class="container">
             <div class="row">
-                <div class="col-xl-7">
-                    <div class="testmonial_active owl-carousel">
-                        <div class="single_slider">
-                            <div class="slider_text">
-                                <h3>High Quality Motivation</h3>
-                                <p style="text-align: justify; margin-right: 20px;" class="intro-text">Every person you
-                                    employ walks through the door of your organisation with a particular mindset. My
-                                    mission is to help you align their mindset with your vision.</p>
-                                <a href="#" class="boxed-btn4 ">Learn More</a>
+                <div class="col-xl-12">
+                    <div class="single_slider">
+                        <div class="row image_background">
+                            <div class="col-sm-6">
+                                <div class="slider_text">
+                                    <!-- <h3>High Quality Motivation</h3> -->
+                                    <p class="intro-text" style="text-align: justify; margin-right: 20px;margin-top: 20%">"Every
+                                            person you
+                                            employ walks through the door of your organisation with a particular
+                                            mindset. My
+                                            mission is to help you align their mindset with your vision."</p>
+                                    
+                                    <!-- <a href="about.php" class="boxed-btn4 ">Learn More</a> -->
+                                </div>
                             </div>
+                            <div class="col-sm-6 one">
+                                <img src="img/oscar6.png" style="object-fit: cover; width: 700px;padding-right: 120px;">
+                            </div>
+                            <style>
+                                @media (max-width: 467px) {
+                                
+                                    .intro-text {
+                                        width: 270px;
+                                        position: relative;
+                                        right: 50px;
+                                    }
+
+                                    .one{
+                                        display:none;
+                                    }
+                                }
+                            </style>
                         </div>
                     </div>
                 </div>
@@ -82,7 +141,7 @@
             <div class="col-xl-6 col-md-6">
                 <div class="single_about_info text-center">
                     <div class="about_thumb">
-                        <img src="img/about/oscarls.jpg" style="object-fit: contain;" alt="">
+                        <img class="rounded-circle" src="img/about/oscarls.jpg" style="object-fit: contain;" alt="">
                     </div>
                     <h3>Finest And Strongest Motivational<br>
                         Speaker In The World</h3>
@@ -364,7 +423,8 @@
                                 <input type="email" placeholder="Your Email" id="email" name="email" required>
                             </div>
                             <div class="col-xl-6 col-md-6">
-                                <input type="text" placeholder="Phone no." id="phone_number" name="phone_number" required>
+                                <input type="text" placeholder="Phone no." id="phone_number" name="phone_number"
+                                    required>
                             </div>
                             <div class="col-xl-6 col-md-6">
                                 <input type="date" id="date" placeholder="Appointment date" name="date" required>
@@ -459,8 +519,9 @@
 <?php include_once 'partials/footer.php'; ?>
 
 <script>
-   $(document).on('submit', '#book_apointment_form', function (event) {
-      event.preventDefault();
-      submitFormQuery(this, "database/Apointment/add_apointment.php", ".loading", "Apointment Booked Successfully", false);
+    $(document).on('submit', '#book_apointment_form', function (event) {
+        event.preventDefault();
+        submitFormQuery(this, "database/Apointment/add_apointment.php", ".loading",
+            "Apointment Booked Successfully", false);
     });
 </script>
