@@ -31,11 +31,11 @@
                             <style>
                                 @media (max-width: 500px) {
                                 
-                                    .intro-text {
+                                    /* .intro-text {
                                         width: 270px;
                                         position: relative;
                                         right: 50px;
-                                    }
+                                    } */
 
                                     .one{
                                         display:none;
@@ -70,11 +70,11 @@
                             <style>
                                 @media (max-width: 467px) {
                                 
-                                    .intro-text {
+                                    /* .intro-text {
                                         width: 270px;
                                         position: relative;
                                         right: 50px;
-                                    }
+                                    } */
 
                                     .one{
                                         display:none;
@@ -111,11 +111,11 @@
                             <style>
                                 @media (max-width: 467px) {
                                 
-                                    .intro-text {
+                                    /* .intro-text {
                                         width: 270px;
                                         position: relative;
                                         right: 50px;
-                                    }
+                                    } */
 
                                     .one{
                                         display:none;
