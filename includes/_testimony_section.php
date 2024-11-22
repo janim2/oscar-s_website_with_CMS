@@ -6,7 +6,7 @@
 
                     <?php
                         $t_query = "SELECT * FROM testimony";
-                        $t_statement = $con->prepare($t_query);
+                        $t_statement = $con->prepare(query: $t_query);
                         $t_statement->execute();
 
                         $t_count = $t_statement->rowCount();
@@ -18,7 +18,7 @@
                                     <i class="flaticon-straight-quotes"></i>
                                     <div class="row">
                                         <div class="col-md-4">
-                                        <img class="rounded-circle" src="<?= $speaker_images_url.fetchFirstTestimonyImage($con, $t_result['id'])?>" alt="" style="object-fit: cover;width: 250px; height: 250px;display: block;
+                                        <img class="rounded-circle" src="<?= $speaker_images_url.fetchFirstTestimonyImage(con: $con, testimony_id: $t_result['id'])?>" alt="" style="object-fit: cover;width: 250px; height: 250px;display: block;
                                             margin-left: auto;margin-right: auto;">
 
                                         </div>
@@ -28,9 +28,9 @@
                                     </div>
                                     <div class="author_info d-flex justify-content-center align-items-center">
                                         <!-- <div class="thumb">
-                                            <img class="rounded-circle" src="<?= $speaker_images_url.fetchFirstTestimonyImage($con, $t_result['id'])?>" alt="" height="200" width="200">
+                                            <img class="rounded-circle" src="<?= $speaker_images_url.fetchFirstTestimonyImage(con: $con, testimony_id: $t_result['id'])?>" alt="" height="200" width="200">
                                         </div> -->
-                                        <span>- <?= $t_result['speaker']?> (<?= $t_result['position']?>)
+                                        <span style="font-size: 20px;">- <?= $t_result['speaker']?> (<?= $t_result['position']?>)
                                         </span>
                                     </div>
 

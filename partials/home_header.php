@@ -58,8 +58,7 @@
                                         <li><a class="active" href="index.php">home</a></li>
                                         <li><a href="about.php">About</a></li>
                                         <li><a href="practice.php">Services</a></li>
-                                        <!-- <li><a href="blog.php">blog</i></a> -->
-
+                                        <li><a href="blog.php">blog</i></a>
                                         </li>
                                         <li><a href="contact.php">Contact</a></li>
                                     </ul>
