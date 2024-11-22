@@ -38,7 +38,7 @@
             }
         </style>
         <div class="row no-gutters">
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
                 <div class="single_practice">
                     <div class="practice_image">
                         <img class="service-image" src="img/practice/NABCO.jpeg" alt="">
@@ -69,7 +69,7 @@
                     }
                 </script>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
                 <div class="single_practice">
                     <div class="practice_image">
                         <img class="service-image" src="img/practice/LONDON.jpeg" alt="">
@@ -97,7 +97,7 @@
                     }
                 </script>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
                 <div class="single_practice">
                     <div class="practice_image">
                         <img class="service-image" src="img/practice/uni.jpeg" alt="">
@@ -129,7 +129,7 @@
                     }
                 </script>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
                 <div class="single_practice">
                     <div class="practice_image">
                         <img class="service-image" src="img/practice/uni.jpeg" alt="">
@@ -162,7 +162,7 @@
                     }
                 </script>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
                 <div class="single_practice">
                     <div class="practice_image">
                         <img class="service-image" src="img/practice/stepout.jpeg" alt="">
@@ -195,7 +195,7 @@
                     }
                 </script>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-4 col-md-6">
                 <div class="single_practice">
                     <div class="practice_image">
                         <img class="service-image" src="img/practice/stepout.jpeg" alt="">
