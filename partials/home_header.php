@@ -42,7 +42,7 @@
                 <div class="container-fluid p-0">
                     <div class="row align-items-center justify-content-between no-gutters">
                         <div class="col-xl-1 col-lg-1">
-                            <img class="rounded-circle" src="img/Oscar.png" width="70px" style="background: white;/>
+                            <img class="rounded-circle" src="img/Oscar.png" width="70px" style="background: white;"/>
                             <!--<div style="background: #ECECEB; border-radius: 50%; width: 170px; height: 80px;" class="logo-img">
                            
                             <!--    <a href="index.php">-->
@@ -58,7 +58,7 @@
                                         <li><a class="active" href="index.php">home</a></li>
                                         <li><a href="about.php">About</a></li>
                                         <li><a href="practice.php">Services</a></li>
-                                        <li><a href="blog.php">blog</i></a>
+                                        <!-- <li><a href="blog.php">blog</i></a> -->
 
                                         </li>
                                         <li><a href="contact.php">Contact</a></li>
